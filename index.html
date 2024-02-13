@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Valentines Invitation</title>
+    <link rel="stylesheet" href="invitation.css">
+  </head>
+  <body>
+    <div class="question">
+      Will you be my valentines date, Fylene?
+    </div>
+    <h3>Di lang ta kaDate sa 14 kay busy ta, igka 15 nalang wabi hah</h3>
+
+    <img src="assets/pwease.gif" alt="cat asking question" class="responsive" />
+    <br>
+    <button class="answerButton" id="yesButton" onclick="location.href='2yehey.html'">Yes, my wabi!</button>
+    <button class="answerButton" id="noButton">No thanks!</button>
+    
+    <script>
+      function changeYesButtonText() {
+        var texts = ["Yes, my wabi!",
+                    "Absolutely!",
+                    "Forever and always!",
+                    "Pretty please!",
+                    "Sige na fyyy!! ToT",
+                    "Date tayoo!!",
+                    "Yes yes yes yes!"];
+        var randomIndex = Math.floor(Math.random() * texts.length);
+        var yesButton = document.getElementById("yesButton");
+        if (yesButton) {
+          yesButton.textContent = texts[randomIndex];
+        }
+      }
+    
+      document.getElementById("noButton").addEventListener("click", function () {
+        var yesButton = document.getElementById("yesButton");
+        if (yesButton) {
+          var currentFontSize = parseInt(window.getComputedStyle(yesButton).fontSize);
+          yesButton.style.fontSize = (currentFontSize + 10) + "px";
+          changeYesButtonText(); 
+        }
+      });
+    </script>
+    
+  </body>
+</html>

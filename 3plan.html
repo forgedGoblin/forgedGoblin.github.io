@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="plan.css">
+    </head>
+    <body>
+        <div class="text">
+            So here's my plan, wabi!
+        </div>
+
+        <div class="carousel-container">
+            <div class="carousel-slide">
+              <img src="assets/bus.gif" alt="bus speeding">
+              <p class="carousel-text">First, I travel to your dorm by bus</p>
+            </div>
+            <div class="carousel-slide">
+              <img src="assets/taxi.gif" alt="taxi taxing">
+              <p class="carousel-text">Then we taxi or grab to Robinsons Galleria</p>
+            </div>
+            <div class="carousel-slide">
+              <img src="assets/watchCinema.gif" alt="watch cinema">
+              <p class="carousel-text">Watch a movie together!</p>
+            </div>
+            <div class="carousel-slide">
+              <img src="assets/itpark.gif" alt="go to it park">
+              <p class="carousel-text">Go to IT park after</p>
+            </div>
+            <div class="carousel-slide">
+              <img src="assets/giftbuying.gif" alt="gift buying">
+              <p class="carousel-text">Buy each other gifts</p>
+            </div>
+            <div class="carousel-slide">
+              <img src="assets/cheeze.gif" alt="cheez picture">
+              <p class="carousel-text">Cheez picture, yes?</p>
+            </div>
+            <div class="carousel-slide">
+              <img src="assets/seafood.gif" alt="seafood eating">
+              <p class="carousel-text">Eat some seafood boil, yummers</p>
+            </div>
+            <div class="carousel-slide">
+              <img src="assets/manju.gif" alt="buy snacks">
+              <p class="carousel-text">Buy some little manju, wabu!</p>
+            </div>
+            <div class="carousel-slide">
+              <img src="assets/hangout.gif" alt="chillin like a villain">
+              <p class="carousel-text">Then hangout and chill sa grass area</p>
+            </div>
+        </div>
+          <button class="prev-btn">&#10094;</button>
+          <button class="next-btn">&#10095;</button>
+          <br>
+          <button class="goNext" onclick="location.href='4flowers.html'">if you agree then click me uwu</button>
+
+          <script>
+            let slideIndex = 0;
+            const slides = document.querySelectorAll(".carousel-slide");
+            const nextButton = document.querySelector(".goNext");
+            
+            function showSlides() {
+              for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+              }
+              slides[slideIndex].style.display = "block";
+              
+              if (slideIndex === slides.length - 1) {
+                nextButton.style.display = "block";
+              } else {
+                nextButton.style.display = "none";
+              }
+            }
+            
+            document.querySelector(".prev-btn").addEventListener("click", () => {
+              slideIndex--;
+              if (slideIndex < 0) {
+                slideIndex = slides.length - 1;
+              }
+              showSlides();
+            });
+            
+            document.querySelector(".next-btn").addEventListener("click", () => {
+              slideIndex++;
+              if (slideIndex >= slides.length) {
+                slideIndex = 0;
+              }
+              showSlides();
+            });
+            
+            showSlides();
+          </script>
+          
+    </body>
+</html>
